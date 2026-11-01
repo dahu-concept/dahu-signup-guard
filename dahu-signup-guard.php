@@ -1,7 +1,6 @@
 <?php
 /**
  * Plugin Name:       Dahu Signup Guard
- * Plugin URI:        https://dahu-concept.fr
  * Description:       Keeps spam registrations out, without a captcha: an invisible honeypot, blocklists for usernames and email addresses, and a log of what was turned away. Works on the WordPress and WooCommerce registration forms.
  * Version:           2.1.0
  * Author:            Hugo Vial-Jaime
