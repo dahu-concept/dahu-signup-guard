@@ -65,29 +65,29 @@ class Dahu_Signup_Guard_Rules {
 		}
 
 		if ( Dahu_Signup_Guard_Honeypot::was_tripped() ) {
-			$errors->add( 'dahu-signup-guard-honeypot', __( 'Could not validate the form. Please try again.', 'dahu-signup-guard' ) );
+			$errors->add( 'dahu-signup-guard-honeypot', __( 'Could not validate the form. Please try again.', 'ubac-signup' ) );
 			Dahu_Signup_Guard_Log::add( 'honeypot', $username, $email );
 			return $errors;
 		}
 
 		$hit = self::matching_pattern( Dahu_Signup_Guard_Settings::get( 'username_patterns' ), $username );
 		if ( null !== $hit ) {
-			$errors->add( 'dahu-signup-guard-username', __( 'This username is not allowed.', 'dahu-signup-guard' ) );
+			$errors->add( 'dahu-signup-guard-username', __( 'This username is not allowed.', 'ubac-signup' ) );
 			/* translators: %s: the blocklist entry that matched. */
-			Dahu_Signup_Guard_Log::add( sprintf( __( 'username (%s)', 'dahu-signup-guard' ), $hit ), $username, $email );
+			Dahu_Signup_Guard_Log::add( sprintf( __( 'username (%s)', 'ubac-signup' ), $hit ), $username, $email );
 			return $errors;
 		}
 
 		$hit = self::matching_pattern( Dahu_Signup_Guard_Settings::get( 'email_patterns' ), $email );
 		if ( null !== $hit ) {
-			$errors->add( 'dahu-signup-guard-email', __( 'This email address cannot be used to register.', 'dahu-signup-guard' ) );
+			$errors->add( 'dahu-signup-guard-email', __( 'This email address cannot be used to register.', 'ubac-signup' ) );
 			/* translators: %s: the blocklist entry that matched. */
-			Dahu_Signup_Guard_Log::add( sprintf( __( 'email (%s)', 'dahu-signup-guard' ), $hit ), $username, $email );
+			Dahu_Signup_Guard_Log::add( sprintf( __( 'email (%s)', 'ubac-signup' ), $hit ), $username, $email );
 			return $errors;
 		}
 
 		if ( Dahu_Signup_Guard_Settings::get( 'block_plus_aliases' ) && self::is_plus_alias( $email ) ) {
-			$errors->add( 'dahu-signup-guard-alias', __( 'Please use your main email address, without a “+” alias.', 'dahu-signup-guard' ) );
+			$errors->add( 'dahu-signup-guard-alias', __( 'Please use your main email address, without a “+” alias.', 'ubac-signup' ) );
 			Dahu_Signup_Guard_Log::add( 'plus alias', $username, $email );
 			return $errors;
 		}

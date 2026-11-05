@@ -1,13 +1,13 @@
 <?php
 /**
- * Plugin Name:       Dahu Signup Guard
+ * Plugin Name:       Ubac Signup Guard
  * Description:       Keeps spam registrations out, without a captcha: an invisible honeypot, blocklists for usernames and email addresses, and a log of what was turned away. Works on the WordPress and WooCommerce registration forms.
  * Version:           2.1.0
  * Author:            Hugo Vial-Jaime
  * Author URI:        https://dahu-concept.fr
  * License:           MIT
  * License URI:       https://opensource.org/licenses/MIT
- * Text Domain:       dahu-signup-guard
+ * Text Domain:       ubac-signup
  * Domain Path:       /languages
  * Requires at least: 6.0
  * Requires PHP:      7.4
@@ -64,7 +64,7 @@ add_filter(
 		$settings = sprintf(
 			'<a href="%s">%s</a>',
 			esc_url( admin_url( 'options-general.php?page=' . DAHU_SIGNUP_GUARD_SLUG ) ),
-			esc_html__( 'Settings', 'dahu-signup-guard' )
+			esc_html__( 'Settings', 'ubac-signup' )
 		);
 		array_unshift( $links, $settings );
 		return $links;
@@ -84,18 +84,18 @@ add_filter(
 		return array(
 			sprintf(
 				/* translators: %s: plugin version number. */
-				esc_html__( 'Version %s', 'dahu-signup-guard' ),
+				esc_html__( 'Version %s', 'ubac-signup' ),
 				esc_html( $header['Version'] )
 			),
 			sprintf(
 				'<a href="%s" target="_blank" rel="noopener">%s</a>',
 				esc_url( 'https://dahu-concept.fr' ),
-				esc_html__( 'By Hugo Vial-Jaime — Dahu-Concept', 'dahu-signup-guard' )
+				esc_html__( 'By Hugo Vial-Jaime — Dahu-Concept', 'ubac-signup' )
 			),
 			sprintf(
 				'<a href="%s" target="_blank" rel="noopener">%s</a>',
 				esc_url( 'https://dahu-concept.fr' ),
-				esc_html__( 'Plugin website', 'dahu-signup-guard' )
+				esc_html__( 'Plugin website', 'ubac-signup' )
 			),
 		);
 	},
@@ -130,8 +130,8 @@ add_action(
 		Dahu_Welcome::register(
 			array(
 				'slug'       => 'dahu-signup-guard',
-				'name'       => __( 'Signup guard', 'dahu-signup-guard' ),
-				'tagline'    => __( 'Keeps robots out of the registration forms, and logs what it turned away.', 'dahu-signup-guard' ),
+				'name'       => __( 'Signup guard', 'ubac-signup' ),
+				'tagline'    => __( 'Keeps robots out of the registration forms, and logs what it turned away.', 'ubac-signup' ),
 				'file'       => DAHU_SIGNUP_GUARD_FILE,
 				'version'    => DAHU_SIGNUP_GUARD_VERSION,
 				'textdomain' => 'dahu-signup-guard',
@@ -148,24 +148,24 @@ add_action(
 				 * no text domain of its own.
 				 */
 				'strings'    => array(
-					'next'   => __( 'Next', 'dahu-signup-guard' ),
-					'done'   => __( 'Done', 'dahu-signup-guard' ),
-					'skip'   => __( 'Skip', 'dahu-signup-guard' ),
-					'of'     => __( 'of', 'dahu-signup-guard' ),
-					'denied' => __( 'You are not allowed to view this page.', 'dahu-signup-guard' ),
+					'next'   => __( 'Next', 'ubac-signup' ),
+					'done'   => __( 'Done', 'ubac-signup' ),
+					'skip'   => __( 'Skip', 'ubac-signup' ),
+					'of'     => __( 'of', 'ubac-signup' ),
+					'denied' => __( 'You are not allowed to view this page.', 'ubac-signup' ),
 				),
 				'points'     => array(
 				array(
-					'title' => __( 'An invisible trap', 'dahu-signup-guard' ),
-					'text'  => __( 'A hidden field real visitors never see.', 'dahu-signup-guard' ),
+					'title' => __( 'An invisible trap', 'ubac-signup' ),
+					'text'  => __( 'A hidden field real visitors never see.', 'ubac-signup' ),
 				),
 				array(
-					'title' => __( 'Your own patterns', 'dahu-signup-guard' ),
-					'text'  => __( 'Refuse usernames and addresses you recognise.', 'dahu-signup-guard' ),
+					'title' => __( 'Your own patterns', 'ubac-signup' ),
+					'text'  => __( 'Refuse usernames and addresses you recognise.', 'ubac-signup' ),
 				),
 				array(
-					'title' => __( 'A log that is read', 'dahu-signup-guard' ),
-					'text'  => __( 'What was blocked, when, and why.', 'dahu-signup-guard' ),
+					'title' => __( 'A log that is read', 'ubac-signup' ),
+					'text'  => __( 'What was blocked, when, and why.', 'ubac-signup' ),
 				),
 				),
 
@@ -186,18 +186,18 @@ add_action(
 				'tour'        => array(
 					array(
 						'selector' => 'input[name="dahu_signup_guard_settings[honeypot]"]',
-						'title'    => __( 'Already protecting you', 'dahu-signup-guard' ),
-						'text'     => __( 'The invisible trap is on by default, and stops most bots on its own.', 'dahu-signup-guard' ),
+						'title'    => __( 'Already protecting you', 'ubac-signup' ),
+						'text'     => __( 'The invisible trap is on by default, and stops most bots on its own.', 'ubac-signup' ),
 					),
 					array(
 						'selector' => '#dahu-signup-guard-username-patterns',
-						'title'    => __( 'Add what you recognise', 'dahu-signup-guard' ),
-						'text'     => __( 'One entry per line, plain text. A username containing any of them is refused.', 'dahu-signup-guard' ),
+						'title'    => __( 'Add what you recognise', 'ubac-signup' ),
+						'text'     => __( 'One entry per line, plain text. A username containing any of them is refused.', 'ubac-signup' ),
 					),
 					array(
 						'selector' => '.dahu-ui-card__title',
-						'title'    => __( 'See what was turned away', 'dahu-signup-guard' ),
-						'text'     => __( 'Each refused registration is listed here, with the reason it was refused.', 'dahu-signup-guard' ),
+						'title'    => __( 'See what was turned away', 'ubac-signup' ),
+						'text'     => __( 'Each refused registration is listed here, with the reason it was refused.', 'ubac-signup' ),
 					),
 				),
 			)

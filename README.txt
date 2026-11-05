@@ -1,4 +1,4 @@
-=== Dahu Signup Guard ===
+=== Ubac Signup Guard ===
 Contributors: dahuconcept
 Tags: spam registration, registration spam, fake accounts, honeypot, registration
 Requires at least: 6.0

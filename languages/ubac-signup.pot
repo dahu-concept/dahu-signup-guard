@@ -8,227 +8,227 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "PO-Revision-Date: 2026-10-24 10:16+0000\n"
-"X-Domain: dahu-signup-guard\n"
+"X-Domain: ubac-signup\n"
 
-#: dahu-signup-guard.php:166
+#: ubac-signup.php:166
 msgid "A hidden field real visitors never see."
 msgstr ""
 
-#: dahu-signup-guard.php:173
+#: ubac-signup.php:173
 msgid "A log that is read"
 msgstr ""
 
-#: includes/class-dahu-signup-guard-settings.php:254
+#: includes/class-ubac-signup-settings.php:254
 msgid "Add an invisible trap field to the registration form"
 msgstr ""
 
-#: dahu-signup-guard.php:200
+#: ubac-signup.php:200
 msgid "Add what you recognise"
 msgstr ""
 
-#: includes/class-dahu-signup-guard-settings.php:339
+#: includes/class-ubac-signup-settings.php:339
 msgid "Address"
 msgstr ""
 
-#: includes/class-dahu-signup-guard-settings.php:298
+#: includes/class-ubac-signup-settings.php:298
 msgid "Addresses in the log"
 msgstr ""
 
-#: dahu-signup-guard.php:195
+#: ubac-signup.php:195
 msgid "Already protecting you"
 msgstr ""
 
-#: dahu-signup-guard.php:165
+#: ubac-signup.php:165
 msgid "An invisible trap"
 msgstr ""
 
 #. translators: %d: number of blocked attempts recorded. */
-#: includes/class-dahu-signup-guard-settings.php:322
+#: includes/class-ubac-signup-settings.php:322
 msgid "Blocked attempts (%d)"
 msgstr ""
 
-#: includes/class-dahu-signup-guard-settings.php:287
+#: includes/class-ubac-signup-settings.php:287
 msgid "Blocked in the email address"
 msgstr ""
 
-#: includes/class-dahu-signup-guard-settings.php:275
+#: includes/class-ubac-signup-settings.php:275
 msgid "Blocked in the username"
 msgstr ""
 
-#: dahu-signup-guard.php:99
+#: ubac-signup.php:99
 msgid "By Hugo Vial-Jaime — Dahu-Concept"
 msgstr ""
 
-#: includes/class-dahu-signup-guard-settings.php:358
+#: includes/class-ubac-signup-settings.php:358
 msgid "Clear the log"
 msgstr ""
 
-#: includes/class-dahu-signup-guard-rules.php:68
+#: includes/class-ubac-signup-rules.php:68
 msgid "Could not validate the form. Please try again."
 msgstr ""
 
-#: includes/class-dahu-signup-guard-settings.php:91
+#: includes/class-ubac-signup-settings.php:91
 msgid "Dahu Signup Guard"
 msgstr ""
 
-#: includes/class-dahu-signup-guard-settings.php:335
+#: includes/class-ubac-signup-settings.php:335
 msgid "Date"
 msgstr ""
 
-#: dahu-signup-guard.php:158
+#: ubac-signup.php:158
 msgid "Done"
 msgstr ""
 
-#: dahu-signup-guard.php:206
+#: ubac-signup.php:206
 msgid "Each refused registration is listed here, with the reason it was refused."
 msgstr ""
 
-#: includes/class-dahu-signup-guard-settings.php:338
+#: includes/class-ubac-signup-settings.php:338
 msgid "Email"
 msgstr ""
 
-#: includes/class-dahu-signup-guard-settings.php:250
+#: includes/class-ubac-signup-settings.php:250
 msgid "Honeypot"
 msgstr ""
 
-#: dahu-signup-guard.php:140 includes/class-dahu-signup-guard-settings.php:233
+#: ubac-signup.php:140 includes/class-ubac-signup-settings.php:233
 msgid "Keeps robots out of the registration forms, and logs what it turned away."
 msgstr ""
 
-#: includes/class-dahu-signup-guard-honeypot.php:75
+#: includes/class-ubac-signup-honeypot.php:75
 msgid "Leave this field empty"
 msgstr ""
 
-#: includes/class-dahu-signup-guard-settings.php:239
+#: includes/class-ubac-signup-settings.php:239
 msgid "Log cleared."
 msgstr ""
 
-#: dahu-signup-guard.php:157
+#: ubac-signup.php:157
 msgid "Next"
 msgstr ""
 
-#: includes/class-dahu-signup-guard-settings.php:330
+#: includes/class-ubac-signup-settings.php:330
 msgid "Nothing blocked so far."
 msgstr ""
 
-#: includes/class-dahu-signup-guard-settings.php:305
+#: includes/class-ubac-signup-settings.php:305
 msgid "Off by default: only the network part is kept, which is enough to recognise a repeat offender. An IP address is personal data, so turning this on may require a mention in your privacy policy."
 msgstr ""
 
-#: includes/class-dahu-signup-guard-settings.php:293
+#: includes/class-ubac-signup-settings.php:293
 msgid "One entry per line — a domain such as .example blocks every address ending in it. Plain text, not regular expressions."
 msgstr ""
 
-#: dahu-signup-guard.php:201
+#: ubac-signup.php:201
 msgid "One entry per line, plain text. A username containing any of them is refused."
 msgstr ""
 
-#: includes/class-dahu-signup-guard-settings.php:281
+#: includes/class-ubac-signup-settings.php:281
 msgid "One entry per line. A registration is refused when its username contains any of them, ignoring case. Plain text, not regular expressions."
 msgstr ""
 
-#: includes/class-dahu-signup-guard-settings.php:269
+#: includes/class-ubac-signup-settings.php:269
 msgid "Only on providers that collapse these to one mailbox, which lets a single address register over and over. Elsewhere a plus address is often a legitimate, distinct one."
 msgstr ""
 
-#: includes/class-dahu-signup-guard-rules.php:90
+#: includes/class-ubac-signup-rules.php:90
 msgid "Please use your main email address, without a “+” alias."
 msgstr ""
 
-#: dahu-signup-guard.php:104
+#: ubac-signup.php:104
 msgid "Plugin website"
 msgstr ""
 
-#: includes/class-dahu-signup-guard-settings.php:262
+#: includes/class-ubac-signup-settings.php:262
 msgid "Plus aliases"
 msgstr ""
 
-#: includes/class-dahu-signup-guard-settings.php:336
+#: includes/class-ubac-signup-settings.php:336
 msgid "Reason"
 msgstr ""
 
-#: includes/class-dahu-signup-guard-settings.php:257
+#: includes/class-ubac-signup-settings.php:257
 msgid "Recommended. Stops most bots, and a real visitor never sees it. The field is named differently on every site, so it cannot be recognised and skipped."
 msgstr ""
 
-#: includes/class-dahu-signup-guard-settings.php:266
+#: includes/class-ubac-signup-settings.php:266
 msgid "Refuse addresses such as name+anything@gmail.com"
 msgstr ""
 
-#: dahu-signup-guard.php:170
+#: ubac-signup.php:170
 msgid "Refuse usernames and addresses you recognise."
 msgstr ""
 
-#: dahu-signup-guard.php:205
+#: ubac-signup.php:205
 msgid "See what was turned away"
 msgstr ""
 
-#: dahu-signup-guard.php:73
+#: ubac-signup.php:73
 msgid "Settings"
 msgstr ""
 
-#: includes/class-dahu-signup-guard-settings.php:92
+#: includes/class-ubac-signup-settings.php:92
 msgid "Signup Guard"
 msgstr ""
 
-#: dahu-signup-guard.php:139 includes/class-dahu-signup-guard-settings.php:232
+#: ubac-signup.php:139 includes/class-ubac-signup-settings.php:232
 msgid "Signup guard"
 msgstr ""
 
-#: dahu-signup-guard.php:159
+#: ubac-signup.php:159
 msgid "Skip"
 msgstr ""
 
-#: includes/class-dahu-signup-guard-settings.php:302
+#: includes/class-ubac-signup-settings.php:302
 msgid "Store the full IP address"
 msgstr ""
 
-#: dahu-signup-guard.php:196
+#: ubac-signup.php:196
 msgid "The invisible trap is on by default, and stops most bots on its own."
 msgstr ""
 
-#: includes/class-dahu-signup-guard-rules.php:83
+#: includes/class-ubac-signup-rules.php:83
 msgid "This email address cannot be used to register."
 msgstr ""
 
-#: includes/class-dahu-signup-guard-rules.php:75
+#: includes/class-ubac-signup-rules.php:75
 msgid "This username is not allowed."
 msgstr ""
 
-#: includes/class-dahu-signup-guard-settings.php:337
+#: includes/class-ubac-signup-settings.php:337
 msgid "Username"
 msgstr ""
 
 #. translators: %s: plugin version number. */
-#: dahu-signup-guard.php:93
+#: ubac-signup.php:93
 msgid "Version %s"
 msgstr ""
 
-#: dahu-signup-guard.php:174
+#: ubac-signup.php:174
 msgid "What was blocked, when, and why."
 msgstr ""
 
-#: includes/class-dahu-signup-guard-settings.php:224
+#: includes/class-ubac-signup-settings.php:224
 msgid "You are not allowed to access this page."
 msgstr ""
 
-#: dahu-signup-guard.php:161
+#: ubac-signup.php:161
 msgid "You are not allowed to view this page."
 msgstr ""
 
-#: dahu-signup-guard.php:169
+#: ubac-signup.php:169
 msgid "Your own patterns"
 msgstr ""
 
-#: includes/class-dahu-signup-guard-rules.php:85
+#: includes/class-ubac-signup-rules.php:85
 msgid "email (%s)"
 msgstr ""
 
-#: dahu-signup-guard.php:160
+#: ubac-signup.php:160
 msgid "of"
 msgstr ""
 
-#: includes/class-dahu-signup-guard-rules.php:77
+#: includes/class-ubac-signup-rules.php:77
 msgid "username (%s)"
 msgstr ""
 
