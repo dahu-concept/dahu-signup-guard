@@ -2,7 +2,7 @@
 /**
  * Registration rules.
  *
- * @package DahuSignupGuard
+ * @package UbacSignup
  */
 
 defined( 'ABSPATH' ) || exit;
@@ -10,7 +10,7 @@ defined( 'ABSPATH' ) || exit;
 /**
  * Decides whether a registration goes through.
  */
-class Dahu_Signup_Guard_Rules {
+class Ubac_Signup_Rules {
 
 	/**
 	 * Hook into both registration forms.
@@ -64,31 +64,31 @@ class Dahu_Signup_Guard_Rules {
 			return $errors;
 		}
 
-		if ( Dahu_Signup_Guard_Honeypot::was_tripped() ) {
-			$errors->add( 'dahu-signup-guard-honeypot', __( 'Could not validate the form. Please try again.', 'ubac-signup' ) );
-			Dahu_Signup_Guard_Log::add( 'honeypot', $username, $email );
+		if ( Ubac_Signup_Honeypot::was_tripped() ) {
+			$errors->add( 'ubac-signup-honeypot', __( 'Could not validate the form. Please try again.', 'ubac-signup' ) );
+			Ubac_Signup_Log::add( 'honeypot', $username, $email );
 			return $errors;
 		}
 
-		$hit = self::matching_pattern( Dahu_Signup_Guard_Settings::get( 'username_patterns' ), $username );
+		$hit = self::matching_pattern( Ubac_Signup_Settings::get( 'username_patterns' ), $username );
 		if ( null !== $hit ) {
-			$errors->add( 'dahu-signup-guard-username', __( 'This username is not allowed.', 'ubac-signup' ) );
+			$errors->add( 'ubac-signup-username', __( 'This username is not allowed.', 'ubac-signup' ) );
 			/* translators: %s: the blocklist entry that matched. */
-			Dahu_Signup_Guard_Log::add( sprintf( __( 'username (%s)', 'ubac-signup' ), $hit ), $username, $email );
+			Ubac_Signup_Log::add( sprintf( __( 'username (%s)', 'ubac-signup' ), $hit ), $username, $email );
 			return $errors;
 		}
 
-		$hit = self::matching_pattern( Dahu_Signup_Guard_Settings::get( 'email_patterns' ), $email );
+		$hit = self::matching_pattern( Ubac_Signup_Settings::get( 'email_patterns' ), $email );
 		if ( null !== $hit ) {
-			$errors->add( 'dahu-signup-guard-email', __( 'This email address cannot be used to register.', 'ubac-signup' ) );
+			$errors->add( 'ubac-signup-email', __( 'This email address cannot be used to register.', 'ubac-signup' ) );
 			/* translators: %s: the blocklist entry that matched. */
-			Dahu_Signup_Guard_Log::add( sprintf( __( 'email (%s)', 'ubac-signup' ), $hit ), $username, $email );
+			Ubac_Signup_Log::add( sprintf( __( 'email (%s)', 'ubac-signup' ), $hit ), $username, $email );
 			return $errors;
 		}
 
-		if ( Dahu_Signup_Guard_Settings::get( 'block_plus_aliases' ) && self::is_plus_alias( $email ) ) {
-			$errors->add( 'dahu-signup-guard-alias', __( 'Please use your main email address, without a “+” alias.', 'ubac-signup' ) );
-			Dahu_Signup_Guard_Log::add( 'plus alias', $username, $email );
+		if ( Ubac_Signup_Settings::get( 'block_plus_aliases' ) && self::is_plus_alias( $email ) ) {
+			$errors->add( 'ubac-signup-alias', __( 'Please use your main email address, without a “+” alias.', 'ubac-signup' ) );
+			Ubac_Signup_Log::add( 'plus alias', $username, $email );
 			return $errors;
 		}
 
@@ -146,7 +146,7 @@ class Dahu_Signup_Guard_Rules {
 		 * @param string[] $domains Lower-case domain names.
 		 */
 		$domains = (array) apply_filters(
-			'dahu_signup_guard_plus_alias_domains',
+			'ubac_signup_plus_alias_domains',
 			array( 'gmail.com', 'googlemail.com' )
 		);
 

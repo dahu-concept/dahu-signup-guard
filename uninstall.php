@@ -6,7 +6,7 @@
  * a log of refused attempts and the salt naming the honeypot field. None of
  * it is content the site would miss, so all of it goes.
  *
- * @package DahuSignupGuard
+ * @package UbacSignup
  */
 
 defined( 'WP_UNINSTALL_PLUGIN' ) || exit;
@@ -14,10 +14,10 @@ defined( 'WP_UNINSTALL_PLUGIN' ) || exit;
 /**
  * Options created by this plugin.
  */
-const DAHU_SIGNUP_GUARD_UNINSTALL_OPTIONS = array(
-	'dahu_signup_guard_settings',
-	'dahu_signup_guard_log',
-	'dahu_signup_guard_field_salt',
+const UBAC_SIGNUP_UNINSTALL_OPTIONS = array(
+	'ubac_signup_settings',
+	'ubac_signup_log',
+	'ubac_signup_field_salt',
 );
 
 /**
@@ -25,20 +25,20 @@ const DAHU_SIGNUP_GUARD_UNINSTALL_OPTIONS = array(
  *
  * @return void
  */
-function dahu_signup_guard_uninstall_site() {
+function ubac_signup_uninstall_site() {
 
 	// The welcome screen's own three flags.
 	//
 	// They are interface state, not the shop's data, which is why they sit
 	// BEFORE any “remove data on uninstall” guard: whatever a shop chose to
-	// keep, a reinstall has to greet it again. `includes/dahu-welcome.php`
+	// keep, a reinstall has to greet it again. `includes/ubac-welcome.php`
 	// writes them with update_option(), so they outlive the plugin unless
 	// they are deleted here — and the welcome screen and the guided tour
 	// would then stay silent for good, with nothing on screen to explain why.
-	delete_option( 'dahu_welcome_seen_dahu-signup-guard' );
-	delete_option( 'dahu_welcome_pending_dahu-signup-guard' );
-	delete_option( 'dahu_welcome_tour_dahu-signup-guard' );
-	foreach ( DAHU_SIGNUP_GUARD_UNINSTALL_OPTIONS as $option ) {
+	delete_option( 'ubac_welcome_seen_ubac-signup' );
+	delete_option( 'ubac_welcome_pending_ubac-signup' );
+	delete_option( 'ubac_welcome_tour_ubac-signup' );
+	foreach ( UBAC_SIGNUP_UNINSTALL_OPTIONS as $option ) {
 		delete_option( $option );
 	}
 }
@@ -53,9 +53,9 @@ if ( is_multisite() ) {
 
 	foreach ( $site_ids as $site_id ) {
 		switch_to_blog( $site_id );
-		dahu_signup_guard_uninstall_site();
+		ubac_signup_uninstall_site();
 		restore_current_blog();
 	}
 } else {
-	dahu_signup_guard_uninstall_site();
+	ubac_signup_uninstall_site();
 }

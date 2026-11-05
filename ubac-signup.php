@@ -12,16 +12,16 @@
  * Requires at least: 6.0
  * Requires PHP:      7.4
  *
- * @package DahuSignupGuard
+ * @package UbacSignup
  */
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'DAHU_SIGNUP_GUARD_VERSION', '2.1.0' );
-define( 'DAHU_SIGNUP_GUARD_FILE', __FILE__ );
-define( 'DAHU_SIGNUP_GUARD_PATH', plugin_dir_path( __FILE__ ) );
-define( 'DAHU_SIGNUP_GUARD_URL', plugin_dir_url( __FILE__ ) );
-define( 'DAHU_SIGNUP_GUARD_SLUG', 'dahu-signup-guard' );
+define( 'UBAC_SIGNUP_VERSION', '2.1.0' );
+define( 'UBAC_SIGNUP_FILE', __FILE__ );
+define( 'UBAC_SIGNUP_PATH', plugin_dir_path( __FILE__ ) );
+define( 'UBAC_SIGNUP_URL', plugin_dir_url( __FILE__ ) );
+define( 'UBAC_SIGNUP_SLUG', 'ubac-signup' );
 
 /* -------------------------------------------------------------------------
  * Translations
@@ -40,17 +40,17 @@ define( 'DAHU_SIGNUP_GUARD_SLUG', 'dahu-signup-guard' );
  * on its own, and simply also covers WooCommerce's when it is present.
  * ---------------------------------------------------------------------- */
 
-require_once DAHU_SIGNUP_GUARD_PATH . 'includes/class-dahu-signup-guard-settings.php';
-require_once DAHU_SIGNUP_GUARD_PATH . 'includes/class-dahu-signup-guard-log.php';
-require_once DAHU_SIGNUP_GUARD_PATH . 'includes/class-dahu-signup-guard-honeypot.php';
-require_once DAHU_SIGNUP_GUARD_PATH . 'includes/class-dahu-signup-guard-rules.php';
+require_once UBAC_SIGNUP_PATH . 'includes/class-ubac-signup-settings.php';
+require_once UBAC_SIGNUP_PATH . 'includes/class-ubac-signup-log.php';
+require_once UBAC_SIGNUP_PATH . 'includes/class-ubac-signup-honeypot.php';
+require_once UBAC_SIGNUP_PATH . 'includes/class-ubac-signup-rules.php';
 
 add_action(
 	'plugins_loaded',
 	static function () {
-		Dahu_Signup_Guard_Settings::init();
-		Dahu_Signup_Guard_Honeypot::init();
-		Dahu_Signup_Guard_Rules::init();
+		Ubac_Signup_Settings::init();
+		Ubac_Signup_Honeypot::init();
+		Ubac_Signup_Rules::init();
 	}
 );
 
@@ -63,7 +63,7 @@ add_filter(
 	static function ( $links ) {
 		$settings = sprintf(
 			'<a href="%s">%s</a>',
-			esc_url( admin_url( 'options-general.php?page=' . DAHU_SIGNUP_GUARD_SLUG ) ),
+			esc_url( admin_url( 'options-general.php?page=' . UBAC_SIGNUP_SLUG ) ),
 			esc_html__( 'Settings', 'ubac-signup' )
 		);
 		array_unshift( $links, $settings );
@@ -109,7 +109,7 @@ add_filter(
  * Registered here rather than inside the admin include, because the
  * activation flag has to be set whatever else is loaded.
  */
-require_once DAHU_SIGNUP_GUARD_PATH . 'includes/dahu-welcome.php';
+require_once UBAC_SIGNUP_PATH . 'includes/ubac-welcome.php';
 
 /*
  * The flag, not a redirect: an activation hook that redirects breaks bulk
@@ -120,21 +120,21 @@ require_once DAHU_SIGNUP_GUARD_PATH . 'includes/dahu-welcome.php';
 register_activation_hook(
 	__FILE__,
 	static function () {
-		Dahu_Welcome::mark_activated( 'dahu-signup-guard' );
+		Ubac_Welcome::mark_activated( 'ubac-signup' );
 	}
 );
 
 add_action(
 	'init',
 	static function () {
-		Dahu_Welcome::register(
+		Ubac_Welcome::register(
 			array(
-				'slug'       => 'dahu-signup-guard',
+				'slug'       => 'ubac-signup',
 				'name'       => __( 'Signup guard', 'ubac-signup' ),
 				'tagline'    => __( 'Keeps robots out of the registration forms, and logs what it turned away.', 'ubac-signup' ),
-				'file'       => DAHU_SIGNUP_GUARD_FILE,
-				'version'    => DAHU_SIGNUP_GUARD_VERSION,
-				'textdomain' => 'dahu-signup-guard',
+				'file'       => UBAC_SIGNUP_FILE,
+				'version'    => UBAC_SIGNUP_VERSION,
+				'textdomain' => 'ubac-signup',
 				'mark'       => array(
 					'view'  => '0 0 112 112',
 					'paths' => array(
@@ -182,20 +182,20 @@ add_action(
 				 * its log is empty. The log card's heading is used instead,
 				 * which is rendered either way.
 				 */
-				'tour_screen' => 'settings_page_dahu-signup-guard',
+				'tour_screen' => 'settings_page_ubac-signup',
 				'tour'        => array(
 					array(
-						'selector' => 'input[name="dahu_signup_guard_settings[honeypot]"]',
+						'selector' => 'input[name="ubac_signup_settings[honeypot]"]',
 						'title'    => __( 'Already protecting you', 'ubac-signup' ),
 						'text'     => __( 'The invisible trap is on by default, and stops most bots on its own.', 'ubac-signup' ),
 					),
 					array(
-						'selector' => '#dahu-signup-guard-username-patterns',
+						'selector' => '#ubac-signup-username-patterns',
 						'title'    => __( 'Add what you recognise', 'ubac-signup' ),
 						'text'     => __( 'One entry per line, plain text. A username containing any of them is refused.', 'ubac-signup' ),
 					),
 					array(
-						'selector' => '.dahu-ui-card__title',
+						'selector' => '.ubac-ui-card__title',
 						'title'    => __( 'See what was turned away', 'ubac-signup' ),
 						'text'     => __( 'Each refused registration is listed here, with the reason it was refused.', 'ubac-signup' ),
 					),

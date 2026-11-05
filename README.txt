@@ -1,5 +1,5 @@
 === Ubac Signup Guard ===
-Contributors: dahuconcept
+Contributors: ubacconcept
 Tags: spam registration, registration spam, fake accounts, honeypot, registration
 Requires at least: 6.0
 Tested up to: 7.1
@@ -16,7 +16,7 @@ Open registration on a WordPress or WooCommerce site and the fake accounts
 start arriving. The usual answer is a captcha, which asks every real visitor to
 prove themselves because a few of them are not people.
 
-Dahu Signup Guard takes the opposite approach: nothing is asked of the visitor.
+Ubac Signup Guard takes the opposite approach: nothing is asked of the visitor.
 A field they never see is added to the form, and an attempt that fills it in is
 a bot. Alongside that, two blocklists refuse the usernames and the email
 domains you never want to see.
@@ -56,12 +56,12 @@ header through a filter.
 = For developers =
 
     // Trust a proxy header, only if a proxy you control sets it.
-    add_filter( 'dahu_signup_guard_trusted_ip_headers', function () {
+    add_filter( 'ubac_signup_trusted_ip_headers', function () {
         return array( 'HTTP_CF_CONNECTING_IP' );
     } );
 
     // Domains on which a "+" alias is refused.
-    add_filter( 'dahu_signup_guard_plus_alias_domains', function ( $domains ) {
+    add_filter( 'ubac_signup_plus_alias_domains', function ( $domains ) {
         $domains[] = 'example.com';
         return $domains;
     } );

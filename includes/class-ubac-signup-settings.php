@@ -2,7 +2,7 @@
 /**
  * Settings screen and stored options.
  *
- * @package DahuSignupGuard
+ * @package UbacSignup
  */
 
 defined( 'ABSPATH' ) || exit;
@@ -10,21 +10,21 @@ defined( 'ABSPATH' ) || exit;
 /**
  * Holds the options and renders the settings page.
  */
-class Dahu_Signup_Guard_Settings {
+class Ubac_Signup_Settings {
 
 	/**
 	 * Option name.
 	 *
 	 * @var string
 	 */
-	const OPTION = 'dahu_signup_guard_settings';
+	const OPTION = 'ubac_signup_settings';
 
 	/**
 	 * Settings group.
 	 *
 	 * @var string
 	 */
-	const GROUP = 'dahu_signup_guard_group';
+	const GROUP = 'ubac_signup_group';
 
 	/**
 	 * Capability required.
@@ -88,10 +88,10 @@ class Dahu_Signup_Guard_Settings {
 	 */
 	public static function register_menu() {
 		add_options_page(
-			__( 'Dahu Signup Guard', 'ubac-signup' ),
+			__( 'Ubac Signup Guard', 'ubac-signup' ),
 			__( 'Signup Guard', 'ubac-signup' ),
 			self::CAPABILITY,
-			DAHU_SIGNUP_GUARD_SLUG,
+			UBAC_SIGNUP_SLUG,
 			array( __CLASS__, 'render_page' )
 		);
 	}
@@ -109,7 +109,7 @@ class Dahu_Signup_Guard_Settings {
 	 */
 	public static function enqueue_style( $hook ) {
 
-		if ( 'settings_page_' . DAHU_SIGNUP_GUARD_SLUG !== $hook ) {
+		if ( 'settings_page_' . UBAC_SIGNUP_SLUG !== $hook ) {
 			return;
 		}
 
@@ -120,17 +120,17 @@ class Dahu_Signup_Guard_Settings {
 		// first serves all of them, and a shop with six of these installed
 		// downloads one copy.
 		wp_enqueue_style(
-			'dahu-ui',
-			DAHU_SIGNUP_GUARD_URL . 'assets/css/dahu-ui.css',
+			'ubac-ui',
+			UBAC_SIGNUP_URL . 'assets/css/ubac-ui.css',
 			array(),
-			DAHU_SIGNUP_GUARD_VERSION
+			UBAC_SIGNUP_VERSION
 		);
 
 		wp_enqueue_style(
-			'dahu-signup-guard-admin',
-			DAHU_SIGNUP_GUARD_URL . 'assets/css/admin.css',
-			array( 'dahu-ui' ),
-			DAHU_SIGNUP_GUARD_VERSION
+			'ubac-signup-admin',
+			UBAC_SIGNUP_URL . 'assets/css/admin.css',
+			array( 'ubac-ui' ),
+			UBAC_SIGNUP_VERSION
 		);
 	}
 
@@ -169,7 +169,7 @@ class Dahu_Signup_Guard_Settings {
 				// NO wp_unslash() HERE. `wp-admin/options.php` unslashes what it
 				// hands to a sanitize_callback, so what arrives already holds
 				// real backslashes — and these patterns are matched as LITERAL
-				// text by Dahu_Signup_Guard_Rules::matching_pattern(), with
+				// text by Ubac_Signup_Rules::matching_pattern(), with
 				// strpos(). A pattern that lost a backslash would simply stop
 				// matching, so the guard would quietly stop guarding against
 				// it. WordPress also sanitises an option twice on a first save
@@ -189,7 +189,7 @@ class Dahu_Signup_Guard_Settings {
 	 */
 	public static function maybe_clear_log() {
 
-		if ( ! isset( $_POST['dahu_signup_guard_clear_log'] ) ) {
+		if ( ! isset( $_POST['ubac_signup_clear_log'] ) ) {
 			return;
 		}
 
@@ -197,14 +197,14 @@ class Dahu_Signup_Guard_Settings {
 			return;
 		}
 
-		check_admin_referer( 'dahu_signup_guard_clear_log' );
+		check_admin_referer( 'ubac_signup_clear_log' );
 
-		Dahu_Signup_Guard_Log::clear();
+		Ubac_Signup_Log::clear();
 
 		wp_safe_redirect(
 			add_query_arg(
 				array(
-					'page'    => DAHU_SIGNUP_GUARD_SLUG,
+					'page'    => UBAC_SIGNUP_SLUG,
 					'cleared' => '1',
 				),
 				admin_url( 'options-general.php' )
@@ -225,12 +225,12 @@ class Dahu_Signup_Guard_Settings {
 		}
 
 		$o   = self::all();
-		$log = Dahu_Signup_Guard_Log::get();
+		$log = Ubac_Signup_Log::get();
 		?>
-		<div class="wrap dahu-ui">
-			<div class="dahu-ui-head">
-				<h1 class="dahu-ui-head__title"><?php esc_html_e( 'Signup guard', 'ubac-signup' ); ?></h1>
-				<p class="dahu-ui-head__sub"><?php esc_html_e( 'Keeps robots out of the registration forms, and logs what it turned away.', 'ubac-signup' ); ?></p>
+		<div class="wrap ubac-ui">
+			<div class="ubac-ui-head">
+				<h1 class="ubac-ui-head__title"><?php esc_html_e( 'Signup guard', 'ubac-signup' ); ?></h1>
+				<p class="ubac-ui-head__sub"><?php esc_html_e( 'Keeps robots out of the registration forms, and logs what it turned away.', 'ubac-signup' ); ?></p>
 			</div>
 			<hr class="wp-header-end">
 
@@ -243,7 +243,7 @@ class Dahu_Signup_Guard_Settings {
 			<form method="post" action="options.php">
 				<?php settings_fields( self::GROUP ); ?>
 
-				<div class="dahu-ui-card">
+				<div class="ubac-ui-card">
 				<table class="form-table" role="presentation">
 					<tbody>
 						<tr>
@@ -272,10 +272,10 @@ class Dahu_Signup_Guard_Settings {
 						</tr>
 						<tr>
 							<th scope="row">
-								<label for="dahu-signup-guard-username-patterns"><?php esc_html_e( 'Blocked in the username', 'ubac-signup' ); ?></label>
+								<label for="ubac-signup-username-patterns"><?php esc_html_e( 'Blocked in the username', 'ubac-signup' ); ?></label>
 							</th>
 							<td>
-								<textarea id="dahu-signup-guard-username-patterns" class="large-text code" rows="6"
+								<textarea id="ubac-signup-username-patterns" class="large-text code" rows="6"
 									name="<?php echo esc_attr( self::OPTION ); ?>[username_patterns]"><?php echo esc_textarea( $o['username_patterns'] ); ?></textarea>
 								<p class="description">
 									<?php esc_html_e( 'One entry per line. A registration is refused when its username contains any of them, ignoring case. Plain text, not regular expressions.', 'ubac-signup' ); ?>
@@ -284,10 +284,10 @@ class Dahu_Signup_Guard_Settings {
 						</tr>
 						<tr>
 							<th scope="row">
-								<label for="dahu-signup-guard-email-patterns"><?php esc_html_e( 'Blocked in the email address', 'ubac-signup' ); ?></label>
+								<label for="ubac-signup-email-patterns"><?php esc_html_e( 'Blocked in the email address', 'ubac-signup' ); ?></label>
 							</th>
 							<td>
-								<textarea id="dahu-signup-guard-email-patterns" class="large-text code" rows="4"
+								<textarea id="ubac-signup-email-patterns" class="large-text code" rows="4"
 									name="<?php echo esc_attr( self::OPTION ); ?>[email_patterns]"><?php echo esc_textarea( $o['email_patterns'] ); ?></textarea>
 								<p class="description">
 									<?php esc_html_e( 'One entry per line — a domain such as .example blocks every address ending in it. Plain text, not regular expressions.', 'ubac-signup' ); ?>
@@ -310,12 +310,12 @@ class Dahu_Signup_Guard_Settings {
 				</table>
 				</div>
 
-				<?php submit_button( null, 'dahu-ui-btn dahu-ui-btn--go' ); ?>
+				<?php submit_button( null, 'ubac-ui-btn ubac-ui-btn--go' ); ?>
 			</form>
 
-			<div class="dahu-ui-card">
-				<div class="dahu-ui-card__head">
-					<h2 class="dahu-ui-card__title">
+			<div class="ubac-ui-card">
+				<div class="ubac-ui-card__head">
+					<h2 class="ubac-ui-card__title">
 						<?php
 						printf(
 							/* translators: %d: number of blocked attempts recorded. */
@@ -327,9 +327,9 @@ class Dahu_Signup_Guard_Settings {
 				</div>
 
 			<?php if ( ! $log ) : ?>
-				<p class="dahu-ui-hint"><?php esc_html_e( 'Nothing blocked so far.', 'ubac-signup' ); ?></p>
+				<p class="ubac-ui-hint"><?php esc_html_e( 'Nothing blocked so far.', 'ubac-signup' ); ?></p>
 			<?php else : ?>
-				<table class="dahu-ui-table dahu-sg-log">
+				<table class="ubac-ui-table ubac-sg-log">
 					<thead>
 						<tr>
 							<th><?php esc_html_e( 'Date', 'ubac-signup' ); ?></th>
@@ -352,9 +352,9 @@ class Dahu_Signup_Guard_Settings {
 					</tbody>
 				</table>
 
-				<form method="post" class="dahu-sg-form-spaced">
-					<?php wp_nonce_field( 'dahu_signup_guard_clear_log' ); ?>
-					<button type="submit" name="dahu_signup_guard_clear_log" value="1" class="dahu-ui-btn">
+				<form method="post" class="ubac-sg-form-spaced">
+					<?php wp_nonce_field( 'ubac_signup_clear_log' ); ?>
+					<button type="submit" name="ubac_signup_clear_log" value="1" class="ubac-ui-btn">
 						<?php esc_html_e( 'Clear the log', 'ubac-signup' ); ?>
 					</button>
 				</form>

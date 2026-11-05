@@ -2,7 +2,7 @@
 # This file is distributed under the MIT licence.
 msgid ""
 msgstr ""
-"Project-Id-Version: Dahu Signup Guard\n"
+"Project-Id-Version: Ubac Signup Guard\n"
 "Report-Msgid-Bugs-To: https://dahu-concept.fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -68,7 +68,7 @@ msgid "Could not validate the form. Please try again."
 msgstr ""
 
 #: includes/class-ubac-signup-settings.php:91
-msgid "Dahu Signup Guard"
+msgid "Ubac Signup Guard"
 msgstr ""
 
 #: includes/class-ubac-signup-settings.php:335

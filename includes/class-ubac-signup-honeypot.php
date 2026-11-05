@@ -2,7 +2,7 @@
 /**
  * Invisible honeypot field.
  *
- * @package DahuSignupGuard
+ * @package UbacSignup
  */
 
 defined( 'ABSPATH' ) || exit;
@@ -10,14 +10,14 @@ defined( 'ABSPATH' ) || exit;
 /**
  * Prints a field a human never sees and a careless bot always fills.
  */
-class Dahu_Signup_Guard_Honeypot {
+class Ubac_Signup_Honeypot {
 
 	/**
 	 * Option holding the per-site salt used to name the field.
 	 *
 	 * @var string
 	 */
-	const SALT_OPTION = 'dahu_signup_guard_field_salt';
+	const SALT_OPTION = 'ubac_signup_field_salt';
 
 	/**
 	 * Hook the field onto both registration forms.
@@ -50,7 +50,7 @@ class Dahu_Signup_Guard_Honeypot {
 		}
 
 		// A plausible-looking field name, so it does not stand out in the DOM.
-		return 'contact_' . substr( md5( 'dahu-signup-guard' . $salt ), 0, 10 );
+		return 'contact_' . substr( md5( 'ubac-signup' . $salt ), 0, 10 );
 	}
 
 	/**
@@ -64,7 +64,7 @@ class Dahu_Signup_Guard_Honeypot {
 	 */
 	public static function render() {
 
-		if ( ! Dahu_Signup_Guard_Settings::get( 'honeypot' ) ) {
+		if ( ! Ubac_Signup_Settings::get( 'honeypot' ) ) {
 			return;
 		}
 
@@ -91,7 +91,7 @@ class Dahu_Signup_Guard_Honeypot {
 	 */
 	public static function was_tripped() {
 
-		if ( ! Dahu_Signup_Guard_Settings::get( 'honeypot' ) ) {
+		if ( ! Ubac_Signup_Settings::get( 'honeypot' ) ) {
 			return false;
 		}
 

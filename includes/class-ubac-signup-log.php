@@ -2,7 +2,7 @@
 /**
  * Log of blocked registration attempts.
  *
- * @package DahuSignupGuard
+ * @package UbacSignup
  */
 
 defined( 'ABSPATH' ) || exit;
@@ -10,14 +10,14 @@ defined( 'ABSPATH' ) || exit;
 /**
  * Records what was turned away, and how the visitor's address is handled.
  */
-class Dahu_Signup_Guard_Log {
+class Ubac_Signup_Log {
 
 	/**
 	 * Option holding the log. Never autoloaded.
 	 *
 	 * @var string
 	 */
-	const OPTION = 'dahu_signup_guard_log';
+	const OPTION = 'ubac_signup_log';
 
 	/**
 	 * Entries kept. Older ones are dropped.
@@ -104,7 +104,7 @@ class Dahu_Signup_Guard_Log {
 		 * Empty by default. Only add a header when a proxy you control
 		 * overwrites it on every request; otherwise a visitor can forge it.
 		 *
-		 *     add_filter( 'dahu_signup_guard_trusted_ip_headers', static function () {
+		 *     add_filter( 'ubac_signup_trusted_ip_headers', static function () {
 		 *         return array( 'HTTP_CF_CONNECTING_IP' );
 		 *     } );
 		 *
@@ -112,7 +112,7 @@ class Dahu_Signup_Guard_Log {
 		 *
 		 * @param string[] $headers $_SERVER keys, in order of preference.
 		 */
-		$headers = (array) apply_filters( 'dahu_signup_guard_trusted_ip_headers', array() );
+		$headers = (array) apply_filters( 'ubac_signup_trusted_ip_headers', array() );
 
 		foreach ( $headers as $header ) {
 			if ( empty( $_SERVER[ $header ] ) ) {
@@ -130,7 +130,7 @@ class Dahu_Signup_Guard_Log {
 			return '—';
 		}
 
-		if ( Dahu_Signup_Guard_Settings::get( 'store_full_ip' ) ) {
+		if ( Ubac_Signup_Settings::get( 'store_full_ip' ) ) {
 			return $raw;
 		}
 

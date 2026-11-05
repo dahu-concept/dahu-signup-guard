@@ -1,4 +1,4 @@
-# Dahu Signup Guard
+# Ubac Signup Guard
 
 Keeps spam registrations out without a captcha.
 
@@ -50,7 +50,7 @@ into your log — worse than having no address at all.
 
 ```php
 // Trust a header, only if a proxy you control sets it on every request.
-add_filter( 'dahu_signup_guard_trusted_ip_headers', function () {
+add_filter( 'ubac_signup_trusted_ip_headers', function () {
     return array( 'HTTP_CF_CONNECTING_IP' );
 } );
 ```
@@ -59,8 +59,8 @@ add_filter( 'dahu_signup_guard_trusted_ip_headers', function () {
 
 | Filter | Purpose |
 |---|---|
-| `dahu_signup_guard_trusted_ip_headers` | `$_SERVER` keys trusted for the visitor's address. Empty by default. |
-| `dahu_signup_guard_plus_alias_domains` | Domains on which a `+` alias is refused. Gmail and Googlemail by default. |
+| `ubac_signup_trusted_ip_headers` | `$_SERVER` keys trusted for the visitor's address. Empty by default. |
+| `ubac_signup_plus_alias_domains` | Domains on which a `+` alias is refused. Gmail and Googlemail by default. |
 
 ## External services
 
