@@ -2,7 +2,7 @@
 /**
  * Plugin Name:       Ubac Signup Guard
  * Description:       Keeps spam registrations out, without a captcha: an invisible honeypot, blocklists for usernames and email addresses, and a log of what was turned away. Works on the WordPress and WooCommerce registration forms.
- * Version:           2.1.1
+ * Version:           2.1.2
  * Author:            Hugo Vial-Jaime
  * Author URI:        https://dahu-concept.fr
  * License:           MIT
@@ -17,7 +17,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'UBAC_SIGNUP_VERSION', '2.1.1' );
+define( 'UBAC_SIGNUP_VERSION', '2.1.2' );
 define( 'UBAC_SIGNUP_FILE', __FILE__ );
 define( 'UBAC_SIGNUP_PATH', plugin_dir_path( __FILE__ ) );
 define( 'UBAC_SIGNUP_URL', plugin_dir_url( __FILE__ ) );
