@@ -120,7 +120,7 @@ require_once UBAC_SIGNUP_PATH . 'includes/ubac-welcome.php';
 register_activation_hook(
 	__FILE__,
 	static function () {
-		Ubac_Welcome::mark_activated( 'ubac-signup' );
+		Ubac_Welcome::mark_activated( 'dahuconcept-signup-guard' );
 	}
 );
 
@@ -129,12 +129,12 @@ add_action(
 	static function () {
 		Ubac_Welcome::register(
 			array(
-				'slug'       => 'ubac-signup',
+				'slug'       => 'dahuconcept-signup-guard',
 				'name'       => __( 'Signup guard', 'dahuconcept-signup-guard' ),
 				'tagline'    => __( 'Keeps robots out of the registration forms, and logs what it turned away.', 'dahuconcept-signup-guard' ),
 				'file'       => UBAC_SIGNUP_FILE,
 				'version'    => UBAC_SIGNUP_VERSION,
-				'textdomain' => 'ubac-signup',
+				'textdomain' => 'dahuconcept-signup-guard',
 				'mark'       => array(
 					'view'  => '0 0 112 112',
 					'paths' => array(
