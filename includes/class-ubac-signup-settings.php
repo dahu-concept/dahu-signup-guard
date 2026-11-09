@@ -88,8 +88,8 @@ class Ubac_Signup_Settings {
 	 */
 	public static function register_menu() {
 		add_options_page(
-			__( 'Ubac Signup Guard', 'ubac-signup' ),
-			__( 'Signup Guard', 'ubac-signup' ),
+			__( 'DahuConcept Signup Guard', 'dahuconcept-signup-guard' ),
+			__( 'Signup Guard', 'dahuconcept-signup-guard' ),
 			self::CAPABILITY,
 			UBAC_SIGNUP_SLUG,
 			array( __CLASS__, 'render_page' )
@@ -221,7 +221,7 @@ class Ubac_Signup_Settings {
 	public static function render_page() {
 
 		if ( ! current_user_can( self::CAPABILITY ) ) {
-			wp_die( esc_html__( 'You are not allowed to access this page.', 'ubac-signup' ) );
+			wp_die( esc_html__( 'You are not allowed to access this page.', 'dahuconcept-signup-guard' ) );
 		}
 
 		$o   = self::all();
@@ -229,14 +229,14 @@ class Ubac_Signup_Settings {
 		?>
 		<div class="wrap ubac-ui">
 			<div class="ubac-ui-head">
-				<h1 class="ubac-ui-head__title"><?php esc_html_e( 'Signup guard', 'ubac-signup' ); ?></h1>
-				<p class="ubac-ui-head__sub"><?php esc_html_e( 'Keeps robots out of the registration forms, and logs what it turned away.', 'ubac-signup' ); ?></p>
+				<h1 class="ubac-ui-head__title"><?php esc_html_e( 'Signup guard', 'dahuconcept-signup-guard' ); ?></h1>
+				<p class="ubac-ui-head__sub"><?php esc_html_e( 'Keeps robots out of the registration forms, and logs what it turned away.', 'dahuconcept-signup-guard' ); ?></p>
 			</div>
 			<hr class="wp-header-end">
 
 			<?php if ( isset( $_GET['cleared'] ) ) : // phpcs:ignore WordPress.Security.NonceVerification.Recommended -- display only. ?>
 				<div class="notice notice-success is-dismissible">
-					<p><?php esc_html_e( 'Log cleared.', 'ubac-signup' ); ?></p>
+					<p><?php esc_html_e( 'Log cleared.', 'dahuconcept-signup-guard' ); ?></p>
 				</div>
 			<?php endif; ?>
 
@@ -247,62 +247,62 @@ class Ubac_Signup_Settings {
 				<table class="form-table" role="presentation">
 					<tbody>
 						<tr>
-							<th scope="row"><?php esc_html_e( 'Honeypot', 'ubac-signup' ); ?></th>
+							<th scope="row"><?php esc_html_e( 'Honeypot', 'dahuconcept-signup-guard' ); ?></th>
 							<td>
 								<label>
 									<input type="checkbox" name="<?php echo esc_attr( self::OPTION ); ?>[honeypot]" value="1" <?php checked( $o['honeypot'], 1 ); ?> />
-									<?php esc_html_e( 'Add an invisible trap field to the registration form', 'ubac-signup' ); ?>
+									<?php esc_html_e( 'Add an invisible trap field to the registration form', 'dahuconcept-signup-guard' ); ?>
 								</label>
 								<p class="description">
-									<?php esc_html_e( 'Recommended. Stops most bots, and a real visitor never sees it. The field is named differently on every site, so it cannot be recognised and skipped.', 'ubac-signup' ); ?>
+									<?php esc_html_e( 'Recommended. Stops most bots, and a real visitor never sees it. The field is named differently on every site, so it cannot be recognised and skipped.', 'dahuconcept-signup-guard' ); ?>
 								</p>
 							</td>
 						</tr>
 						<tr>
-							<th scope="row"><?php esc_html_e( 'Plus aliases', 'ubac-signup' ); ?></th>
+							<th scope="row"><?php esc_html_e( 'Plus aliases', 'dahuconcept-signup-guard' ); ?></th>
 							<td>
 								<label>
 									<input type="checkbox" name="<?php echo esc_attr( self::OPTION ); ?>[block_plus_aliases]" value="1" <?php checked( $o['block_plus_aliases'], 1 ); ?> />
-									<?php esc_html_e( 'Refuse addresses such as name+anything@gmail.com', 'ubac-signup' ); ?>
+									<?php esc_html_e( 'Refuse addresses such as name+anything@gmail.com', 'dahuconcept-signup-guard' ); ?>
 								</label>
 								<p class="description">
-									<?php esc_html_e( 'Only on providers that collapse these to one mailbox, which lets a single address register over and over. Elsewhere a plus address is often a legitimate, distinct one.', 'ubac-signup' ); ?>
+									<?php esc_html_e( 'Only on providers that collapse these to one mailbox, which lets a single address register over and over. Elsewhere a plus address is often a legitimate, distinct one.', 'dahuconcept-signup-guard' ); ?>
 								</p>
 							</td>
 						</tr>
 						<tr>
 							<th scope="row">
-								<label for="ubac-signup-username-patterns"><?php esc_html_e( 'Blocked in the username', 'ubac-signup' ); ?></label>
+								<label for="ubac-signup-username-patterns"><?php esc_html_e( 'Blocked in the username', 'dahuconcept-signup-guard' ); ?></label>
 							</th>
 							<td>
 								<textarea id="ubac-signup-username-patterns" class="large-text code" rows="6"
 									name="<?php echo esc_attr( self::OPTION ); ?>[username_patterns]"><?php echo esc_textarea( $o['username_patterns'] ); ?></textarea>
 								<p class="description">
-									<?php esc_html_e( 'One entry per line. A registration is refused when its username contains any of them, ignoring case. Plain text, not regular expressions.', 'ubac-signup' ); ?>
+									<?php esc_html_e( 'One entry per line. A registration is refused when its username contains any of them, ignoring case. Plain text, not regular expressions.', 'dahuconcept-signup-guard' ); ?>
 								</p>
 							</td>
 						</tr>
 						<tr>
 							<th scope="row">
-								<label for="ubac-signup-email-patterns"><?php esc_html_e( 'Blocked in the email address', 'ubac-signup' ); ?></label>
+								<label for="ubac-signup-email-patterns"><?php esc_html_e( 'Blocked in the email address', 'dahuconcept-signup-guard' ); ?></label>
 							</th>
 							<td>
 								<textarea id="ubac-signup-email-patterns" class="large-text code" rows="4"
 									name="<?php echo esc_attr( self::OPTION ); ?>[email_patterns]"><?php echo esc_textarea( $o['email_patterns'] ); ?></textarea>
 								<p class="description">
-									<?php esc_html_e( 'One entry per line — a domain such as .example blocks every address ending in it. Plain text, not regular expressions.', 'ubac-signup' ); ?>
+									<?php esc_html_e( 'One entry per line — a domain such as .example blocks every address ending in it. Plain text, not regular expressions.', 'dahuconcept-signup-guard' ); ?>
 								</p>
 							</td>
 						</tr>
 						<tr>
-							<th scope="row"><?php esc_html_e( 'Addresses in the log', 'ubac-signup' ); ?></th>
+							<th scope="row"><?php esc_html_e( 'Addresses in the log', 'dahuconcept-signup-guard' ); ?></th>
 							<td>
 								<label>
 									<input type="checkbox" name="<?php echo esc_attr( self::OPTION ); ?>[store_full_ip]" value="1" <?php checked( $o['store_full_ip'], 1 ); ?> />
-									<?php esc_html_e( 'Store the full IP address', 'ubac-signup' ); ?>
+									<?php esc_html_e( 'Store the full IP address', 'dahuconcept-signup-guard' ); ?>
 								</label>
 								<p class="description">
-									<?php esc_html_e( 'Off by default: only the network part is kept, which is enough to recognise a repeat offender. An IP address is personal data, so turning this on may require a mention in your privacy policy.', 'ubac-signup' ); ?>
+									<?php esc_html_e( 'Off by default: only the network part is kept, which is enough to recognise a repeat offender. An IP address is personal data, so turning this on may require a mention in your privacy policy.', 'dahuconcept-signup-guard' ); ?>
 								</p>
 							</td>
 						</tr>
@@ -319,7 +319,7 @@ class Ubac_Signup_Settings {
 						<?php
 						printf(
 							/* translators: %d: number of blocked attempts recorded. */
-							esc_html__( 'Blocked attempts (%d)', 'ubac-signup' ),
+							esc_html__( 'Blocked attempts (%d)', 'dahuconcept-signup-guard' ),
 							count( $log )
 						);
 						?>
@@ -327,16 +327,16 @@ class Ubac_Signup_Settings {
 				</div>
 
 			<?php if ( ! $log ) : ?>
-				<p class="ubac-ui-hint"><?php esc_html_e( 'Nothing blocked so far.', 'ubac-signup' ); ?></p>
+				<p class="ubac-ui-hint"><?php esc_html_e( 'Nothing blocked so far.', 'dahuconcept-signup-guard' ); ?></p>
 			<?php else : ?>
 				<table class="ubac-ui-table ubac-sg-log">
 					<thead>
 						<tr>
-							<th><?php esc_html_e( 'Date', 'ubac-signup' ); ?></th>
-							<th><?php esc_html_e( 'Reason', 'ubac-signup' ); ?></th>
-							<th><?php esc_html_e( 'Username', 'ubac-signup' ); ?></th>
-							<th><?php esc_html_e( 'Email', 'ubac-signup' ); ?></th>
-							<th><?php esc_html_e( 'Address', 'ubac-signup' ); ?></th>
+							<th><?php esc_html_e( 'Date', 'dahuconcept-signup-guard' ); ?></th>
+							<th><?php esc_html_e( 'Reason', 'dahuconcept-signup-guard' ); ?></th>
+							<th><?php esc_html_e( 'Username', 'dahuconcept-signup-guard' ); ?></th>
+							<th><?php esc_html_e( 'Email', 'dahuconcept-signup-guard' ); ?></th>
+							<th><?php esc_html_e( 'Address', 'dahuconcept-signup-guard' ); ?></th>
 						</tr>
 					</thead>
 					<tbody>
@@ -355,7 +355,7 @@ class Ubac_Signup_Settings {
 				<form method="post" class="ubac-sg-form-spaced">
 					<?php wp_nonce_field( 'ubac_signup_clear_log' ); ?>
 					<button type="submit" name="ubac_signup_clear_log" value="1" class="ubac-ui-btn">
-						<?php esc_html_e( 'Clear the log', 'ubac-signup' ); ?>
+						<?php esc_html_e( 'Clear the log', 'dahuconcept-signup-guard' ); ?>
 					</button>
 				</form>
 			<?php endif; ?>

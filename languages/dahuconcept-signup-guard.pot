@@ -1,233 +1,234 @@
+# Copyright (C) 2026 Hugo Vial-Jaime
+# This file is distributed under the MIT licence.
 msgid ""
 msgstr ""
-"Project-Id-Version: ubac-signup\n"
+"Project-Id-Version: DahuConcept Signup Guard\n"
+"Report-Msgid-Bugs-To: https://dahu-concept.fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: fr_FR\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"PO-Revision-Date: 2026-10-24 10:16+0000\n"
-"X-Generator: ubac i18n-build\n"
+"PO-Revision-Date: 2026-11-09 07:28+0000\n"
+"X-Domain: dahuconcept-signup-guard\n"
 
-#: ubac-signup.php:166
+#: dahuconcept-signup-guard.php:160
 msgid "A hidden field real visitors never see."
-msgstr "Un champ caché qu’un vrai visiteur ne voit jamais."
+msgstr ""
 
-#: ubac-signup.php:173
+#: dahuconcept-signup-guard.php:167
 msgid "A log that is read"
-msgstr "Un journal qui se lit"
+msgstr ""
 
 #: includes/class-ubac-signup-settings.php:254
 msgid "Add an invisible trap field to the registration form"
-msgstr "Ajouter un champ piège invisible au formulaire d’inscription"
+msgstr ""
 
-#: ubac-signup.php:200
+#: dahuconcept-signup-guard.php:194
 msgid "Add what you recognise"
-msgstr "Ajoutez ce que vous reconnaissez"
+msgstr ""
 
 #: includes/class-ubac-signup-settings.php:339
 msgid "Address"
-msgstr "Adresse"
+msgstr ""
 
 #: includes/class-ubac-signup-settings.php:298
 msgid "Addresses in the log"
-msgstr "Adresses dans le journal"
+msgstr ""
 
-#: ubac-signup.php:195
+#: dahuconcept-signup-guard.php:189
 msgid "Already protecting you"
-msgstr "Déjà en protection"
+msgstr ""
 
-#: ubac-signup.php:165
+#: dahuconcept-signup-guard.php:159
 msgid "An invisible trap"
-msgstr "Un piège invisible"
+msgstr ""
 
 #. translators: %d: number of blocked attempts recorded. */
 #: includes/class-ubac-signup-settings.php:322
 msgid "Blocked attempts (%d)"
-msgstr "Tentatives bloquées (%d)"
+msgstr ""
 
 #: includes/class-ubac-signup-settings.php:287
 msgid "Blocked in the email address"
-msgstr "Bloqué dans l’adresse e-mail"
+msgstr ""
 
 #: includes/class-ubac-signup-settings.php:275
 msgid "Blocked in the username"
-msgstr "Bloqué dans l’identifiant"
+msgstr ""
 
-#: ubac-signup.php:99
+#: dahuconcept-signup-guard.php:93
 msgid "By Hugo Vial-Jaime — Dahu-Concept"
-msgstr "Par Hugo Vial-Jaime — Dahu-Concept"
+msgstr ""
 
 #: includes/class-ubac-signup-settings.php:358
 msgid "Clear the log"
-msgstr "Vider le journal"
+msgstr ""
 
 #: includes/class-ubac-signup-rules.php:68
 msgid "Could not validate the form. Please try again."
-msgstr "Le formulaire n’a pas pu être validé. Merci de réessayer."
+msgstr ""
 
 #: includes/class-ubac-signup-settings.php:91
-msgid "Ubac Signup Guard"
-msgstr "Ubac Signup Guard"
+msgid "DahuConcept Signup Guard"
+msgstr ""
 
 #: includes/class-ubac-signup-settings.php:335
 msgid "Date"
-msgstr "Date"
+msgstr ""
 
-#: ubac-signup.php:158
+#: dahuconcept-signup-guard.php:152
 msgid "Done"
-msgstr "Terminé"
+msgstr ""
 
-#: ubac-signup.php:206
+#: dahuconcept-signup-guard.php:200
 msgid "Each refused registration is listed here, with the reason it was refused."
-msgstr "Chaque inscription refusée est listée ici, avec son motif de refus."
+msgstr ""
 
 #: includes/class-ubac-signup-settings.php:338
 msgid "Email"
-msgstr "E-mail"
+msgstr ""
 
 #: includes/class-ubac-signup-settings.php:250
 msgid "Honeypot"
-msgstr "Champ piège (honeypot)"
+msgstr ""
 
-#: ubac-signup.php:140 includes/class-ubac-signup-settings.php:233
+#: dahuconcept-signup-guard.php:134 includes/class-ubac-signup-settings.php:233
 msgid "Keeps robots out of the registration forms, and logs what it turned away."
-msgstr "Tient les robots hors des formulaires d’inscription, et journalise ce qu’il a écarté."
+msgstr ""
 
 #: includes/class-ubac-signup-honeypot.php:75
 msgid "Leave this field empty"
-msgstr "Laissez ce champ vide"
+msgstr ""
 
 #: includes/class-ubac-signup-settings.php:239
 msgid "Log cleared."
-msgstr "Journal vidé."
+msgstr ""
 
-#: ubac-signup.php:157
+#: dahuconcept-signup-guard.php:151
 msgid "Next"
-msgstr "Suivant"
+msgstr ""
 
 #: includes/class-ubac-signup-settings.php:330
 msgid "Nothing blocked so far."
-msgstr "Rien de bloqué pour l’instant."
+msgstr ""
 
 #: includes/class-ubac-signup-settings.php:305
 msgid "Off by default: only the network part is kept, which is enough to recognise a repeat offender. An IP address is personal data, so turning this on may require a mention in your privacy policy."
-msgstr "Désactivé par défaut : seule la partie réseau est conservée, ce qui suffit à reconnaître un récidiviste. Une adresse IP est une donnée personnelle : l’activer peut demander une mention dans votre politique de confidentialité."
+msgstr ""
 
 #: includes/class-ubac-signup-settings.php:293
 msgid "One entry per line — a domain such as .example blocks every address ending in it. Plain text, not regular expressions."
-msgstr "Une entrée par ligne — un domaine tel que .example bloque toute adresse qui s’y termine. Du texte simple, pas des expressions régulières."
+msgstr ""
 
-#: ubac-signup.php:201
+#: dahuconcept-signup-guard.php:195
 msgid "One entry per line, plain text. A username containing any of them is refused."
-msgstr "Une entrée par ligne, en texte simple. Un identifiant qui en contient une est refusé."
+msgstr ""
 
 #: includes/class-ubac-signup-settings.php:281
 msgid "One entry per line. A registration is refused when its username contains any of them, ignoring case. Plain text, not regular expressions."
-msgstr "Une entrée par ligne. Une inscription est refusée si son identifiant en contient une, sans tenir compte de la casse. Du texte simple, pas des expressions régulières."
+msgstr ""
 
 #: includes/class-ubac-signup-settings.php:269
 msgid "Only on providers that collapse these to one mailbox, which lets a single address register over and over. Elsewhere a plus address is often a legitimate, distinct one."
-msgstr "Seulement chez les fournisseurs qui les ramènent à une seule boîte, ce qui permet à une même adresse de s’inscrire indéfiniment. Ailleurs, une adresse en « + » est souvent une adresse distincte et légitime."
+msgstr ""
 
 #: includes/class-ubac-signup-rules.php:90
 msgid "Please use your main email address, without a “+” alias."
-msgstr "Merci d’utiliser votre adresse e-mail principale, sans alias en « + »."
+msgstr ""
 
-#: ubac-signup.php:104
+#: dahuconcept-signup-guard.php:98
 msgid "Plugin website"
-msgstr "Site de l’extension"
+msgstr ""
 
 #: includes/class-ubac-signup-settings.php:262
 msgid "Plus aliases"
-msgstr "Alias en « + »"
+msgstr ""
 
 #: includes/class-ubac-signup-settings.php:336
 msgid "Reason"
-msgstr "Motif"
+msgstr ""
 
 #: includes/class-ubac-signup-settings.php:257
 msgid "Recommended. Stops most bots, and a real visitor never sees it. The field is named differently on every site, so it cannot be recognised and skipped."
-msgstr "Recommandé. Arrête la plupart des robots, et un vrai visiteur ne le voit jamais. Le champ porte un nom différent sur chaque site, donc il ne peut pas être reconnu et contourné."
+msgstr ""
 
 #: includes/class-ubac-signup-settings.php:266
 msgid "Refuse addresses such as name+anything@gmail.com"
-msgstr "Refuser les adresses du type nom+nimporte-quoi@gmail.com"
+msgstr ""
 
-#: ubac-signup.php:170
+#: dahuconcept-signup-guard.php:164
 msgid "Refuse usernames and addresses you recognise."
-msgstr "Refusez les identifiants et adresses que vous reconnaissez."
+msgstr ""
 
-#: ubac-signup.php:205
+#: dahuconcept-signup-guard.php:199
 msgid "See what was turned away"
-msgstr "Voyez ce qui a été refusé"
+msgstr ""
 
-#: ubac-signup.php:73
+#: dahuconcept-signup-guard.php:67
 msgid "Settings"
-msgstr "Réglages"
+msgstr ""
 
 #: includes/class-ubac-signup-settings.php:92
 msgid "Signup Guard"
-msgstr "Protection des inscriptions"
+msgstr ""
 
-#: ubac-signup.php:139 includes/class-ubac-signup-settings.php:232
+#: dahuconcept-signup-guard.php:133 includes/class-ubac-signup-settings.php:232
 msgid "Signup guard"
-msgstr "Protection des inscriptions"
+msgstr ""
 
-#: ubac-signup.php:159
+#: dahuconcept-signup-guard.php:153
 msgid "Skip"
-msgstr "Passer"
+msgstr ""
 
 #: includes/class-ubac-signup-settings.php:302
 msgid "Store the full IP address"
-msgstr "Enregistrer l’adresse IP complète"
+msgstr ""
 
-#: ubac-signup.php:196
+#: dahuconcept-signup-guard.php:190
 msgid "The invisible trap is on by default, and stops most bots on its own."
-msgstr "Le piège invisible est actif par défaut, et arrête à lui seul la plupart des robots."
+msgstr ""
 
 #: includes/class-ubac-signup-rules.php:83
 msgid "This email address cannot be used to register."
-msgstr "Cette adresse e-mail ne peut pas servir à s’inscrire."
+msgstr ""
 
 #: includes/class-ubac-signup-rules.php:75
 msgid "This username is not allowed."
-msgstr "Cet identifiant n’est pas autorisé."
+msgstr ""
 
 #: includes/class-ubac-signup-settings.php:337
 msgid "Username"
-msgstr "Identifiant"
+msgstr ""
 
 #. translators: %s: plugin version number. */
-#: ubac-signup.php:93
+#: dahuconcept-signup-guard.php:87
 msgid "Version %s"
-msgstr "Version %s"
+msgstr ""
 
-#: ubac-signup.php:174
+#: dahuconcept-signup-guard.php:168
 msgid "What was blocked, when, and why."
-msgstr "Ce qui a été bloqué, quand, et pourquoi."
+msgstr ""
 
 #: includes/class-ubac-signup-settings.php:224
 msgid "You are not allowed to access this page."
-msgstr "Vous n’avez pas l’autorisation d’accéder à cette page."
+msgstr ""
 
-#: ubac-signup.php:161
+#: dahuconcept-signup-guard.php:155
 msgid "You are not allowed to view this page."
-msgstr "Vous n’avez pas l’autorisation de voir cette page."
+msgstr ""
 
-#: ubac-signup.php:169
+#: dahuconcept-signup-guard.php:163
 msgid "Your own patterns"
-msgstr "Vos propres motifs"
+msgstr ""
 
 #: includes/class-ubac-signup-rules.php:85
 msgid "email (%s)"
-msgstr "e-mail (%s)"
+msgstr ""
 
-#: ubac-signup.php:160
+#: dahuconcept-signup-guard.php:154
 msgid "of"
-msgstr "sur"
+msgstr ""
 
 #: includes/class-ubac-signup-rules.php:77
 msgid "username (%s)"
-msgstr "identifiant (%s)"
+msgstr ""
 

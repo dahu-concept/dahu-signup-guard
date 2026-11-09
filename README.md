@@ -1,4 +1,4 @@
-# Ubac Signup Guard
+# DahuConcept Signup Guard
 
 Keeps spam registrations out without a captcha.
 

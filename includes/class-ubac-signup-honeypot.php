@@ -72,7 +72,7 @@ class Ubac_Signup_Honeypot {
 		?>
 		<p style="position:absolute !important;left:-9999px !important;top:-9999px !important;height:0;width:0;overflow:hidden;" aria-hidden="true">
 			<label for="<?php echo esc_attr( $name ); ?>">
-				<?php esc_html_e( 'Leave this field empty', 'ubac-signup' ); ?>
+				<?php esc_html_e( 'Leave this field empty', 'dahuconcept-signup-guard' ); ?>
 			</label>
 			<input type="text"
 				id="<?php echo esc_attr( $name ); ?>"

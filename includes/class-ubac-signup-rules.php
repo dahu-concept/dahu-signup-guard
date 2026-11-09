@@ -65,29 +65,29 @@ class Ubac_Signup_Rules {
 		}
 
 		if ( Ubac_Signup_Honeypot::was_tripped() ) {
-			$errors->add( 'ubac-signup-honeypot', __( 'Could not validate the form. Please try again.', 'ubac-signup' ) );
+			$errors->add( 'ubac-signup-honeypot', __( 'Could not validate the form. Please try again.', 'dahuconcept-signup-guard' ) );
 			Ubac_Signup_Log::add( 'honeypot', $username, $email );
 			return $errors;
 		}
 
 		$hit = self::matching_pattern( Ubac_Signup_Settings::get( 'username_patterns' ), $username );
 		if ( null !== $hit ) {
-			$errors->add( 'ubac-signup-username', __( 'This username is not allowed.', 'ubac-signup' ) );
+			$errors->add( 'ubac-signup-username', __( 'This username is not allowed.', 'dahuconcept-signup-guard' ) );
 			/* translators: %s: the blocklist entry that matched. */
-			Ubac_Signup_Log::add( sprintf( __( 'username (%s)', 'ubac-signup' ), $hit ), $username, $email );
+			Ubac_Signup_Log::add( sprintf( __( 'username (%s)', 'dahuconcept-signup-guard' ), $hit ), $username, $email );
 			return $errors;
 		}
 
 		$hit = self::matching_pattern( Ubac_Signup_Settings::get( 'email_patterns' ), $email );
 		if ( null !== $hit ) {
-			$errors->add( 'ubac-signup-email', __( 'This email address cannot be used to register.', 'ubac-signup' ) );
+			$errors->add( 'ubac-signup-email', __( 'This email address cannot be used to register.', 'dahuconcept-signup-guard' ) );
 			/* translators: %s: the blocklist entry that matched. */
-			Ubac_Signup_Log::add( sprintf( __( 'email (%s)', 'ubac-signup' ), $hit ), $username, $email );
+			Ubac_Signup_Log::add( sprintf( __( 'email (%s)', 'dahuconcept-signup-guard' ), $hit ), $username, $email );
 			return $errors;
 		}
 
 		if ( Ubac_Signup_Settings::get( 'block_plus_aliases' ) && self::is_plus_alias( $email ) ) {
-			$errors->add( 'ubac-signup-alias', __( 'Please use your main email address, without a “+” alias.', 'ubac-signup' ) );
+			$errors->add( 'ubac-signup-alias', __( 'Please use your main email address, without a “+” alias.', 'dahuconcept-signup-guard' ) );
 			Ubac_Signup_Log::add( 'plus alias', $username, $email );
 			return $errors;
 		}

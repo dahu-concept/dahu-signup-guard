@@ -1,4 +1,4 @@
-# Ubac Signup Guard
+# DahuConcept Signup Guard
 
 Tient les inscriptions indésirables à l'écart, sans captcha.
 

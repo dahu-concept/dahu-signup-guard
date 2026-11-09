@@ -1,4 +1,4 @@
-=== Ubac Signup Guard ===
+=== DahuConcept Signup Guard ===
 Contributors: dahuconcept
 Tags: spam registration, registration spam, fake accounts, honeypot, registration
 Requires at least: 6.2
@@ -16,7 +16,7 @@ Open registration on a WordPress or WooCommerce site and the fake accounts
 start arriving. The usual answer is a captcha, which asks every real visitor to
 prove themselves because a few of them are not people.
 
-Ubac Signup Guard takes the opposite approach: nothing is asked of the visitor.
+DahuConcept Signup Guard takes the opposite approach: nothing is asked of the visitor.
 A field they never see is added to the form, and an attempt that fills it in is
 a bot. Alongside that, two blocklists refuse the usernames and the email
 domains you never want to see.
