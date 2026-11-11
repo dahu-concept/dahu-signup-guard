@@ -1,6 +1,6 @@
 === DahuConcept Signup Guard ===
 Contributors: dahuconcept
-Tags: spam registration, registration spam, fake accounts, honeypot, registration
+Tags: registration spam, fake accounts, honeypot, bot signups, spam protection
 Requires at least: 6.2
 Tested up to: 7.1
 Requires PHP: 7.4
